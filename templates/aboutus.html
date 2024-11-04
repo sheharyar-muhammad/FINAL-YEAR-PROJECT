@@ -1,0 +1,138 @@
+{% load static %}
+<!doctype html>
+<html class="h-100" lang="en">
+
+  <head>
+      <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="description" content="A well made and handcrafted Bootstrap 5 template">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
+  <meta name="author" content="Holger Koenemann">
+  <meta name="generator" content="Eleventy v2.0.0">
+  <meta name="HandheldFriendly" content="true">
+  <title>About</title>
+  <link rel="stylesheet" href="{% static 'css/theme.min.css' %}">
+
+
+
+  </head>
+
+  <body class="bg-black text-white mt-0" data-bs-spy="scroll" data-bs-target="#navScroll">
+
+{% include 'navbar.html' %}
+
+    <main>
+      <div class="container">
+  <div class="row d-flex justify-content-center py-vh-5 pb-0">
+    <div class="col-12 col-lg-10 col-xl-8">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="display-1 fw-bold aboutus">Something
+            <span class="fs-4">About Us</span><br>
+               
+            </h1>
+          <p class="lead border-top pt-5 mt-5" data-aos="fade-up">At AI-Powered-SPRC, we're on a mission to simplify and enhance the process of requirement classification. Recognizing the challenges faced by organizations in managing diverse sets of requirements, we have embarked on a journey to develop an intelligent and adaptive solution.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 py-vh-2">
+      <img src="{% static 'img/AIphoto7.avif' %}" width="1446" height="982" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="zoom-up">
+    </div>
+    </div>
+        <div class="col-12 col-lg-10 col-xl-8">
+      <div class="row d-flex align-items-start" data-aos="fade-right">
+        <div class="col-12 col-lg-7">
+          <h2 class="h3 mt-5 border-top pt-5"> Who we are?</h2>
+          <p class="text-secondary">Meet the minds behind the magic. Our team comprises experts in artificial intelligence, software development, data science, and UX/UI design. Together, we bring a wealth of experience and a shared vision for a future where requirement management is seamless and intuitive</p>
+        </div>
+        <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
+          <h3 class="h6">Adaptive Learning</h3>
+          <p class="text-secondary">
+               Machine learning models continuously evolve, learning from data patterns and user interactions to ensure ongoing accuracy and relevance
+          </p>
+        </div>
+      </div>
+
+      <div class="row d-flex align-items-start" data-aos="fade-right">
+        <div class="col-12 col-lg-7">
+          <h2 class="h3 mt-5 border-top pt-5">Our Vision</h2>
+          <p class="text-secondary">Envision a future where managing requirements is no longer a hurdle but a strategic advantage. At AI-Powered-SPRC we aspire to empower organizations to focus on innovation and execution, leaving the complexity of requirement categorization to our intelligent system.</p>
+        </div>
+        <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
+          <h3 class="h6">User-Friendly Interface</h3>
+          <p class="text-secondary">
+                We understand that effective tools must be accessible to all users. Our user-friendly interface caters to both technical and non-technical team members, promoting widespread adoption
+          </p>
+        </div>
+      </div>
+      <div class="row d-flex align-items-start" data-aos="fade-right">
+        <div class="col-12 col-lg-7">
+          <h2 class="h3 mt-5 border-top pt-5">Get in Touch
+          </h2>
+          <p class="text-secondary">Have questions, ideas, or interested in collaboration? We would love to hear from you! Reach out to us at Website. Join us on this exciting journey as we redefine requirement management through the power of AI. Together, let's shape a future where efficiency and innovation go hand in hand.</p>
+        </div>
+        <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
+          <h3 class="h6">Adaptive Learning</h3>
+          <p class="text-secondary">
+            Machine learning models continuously evolve, learning from data patterns and user interactions to ensure ongoing accuracy and relevance.
+          </p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="bg-black border-top border-dark">
+      <div class="container pt-1 text-secondary fw-lighter ">
+        <div class="row">
+          <div class="col-12 col-lg-12 pt-5 text-center ">
+            <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="{% url 'index' %}" style="padding-right: 0px !important;">
+              <img src="{% static 'img/Logo_Ai.png' %}" style="width: 30px;margin-top: -7px;" alt="">
+              <span class="ms-md-1 mt-1 fw-bolder me-md-5" style=" color: #fff !important;margin-left: 0px !important;margin-right: 0px !important;">AI-POWERED SPRC</span>
+
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/aos.js' %}"></script>
+<script>
+AOS.init({
+ duration: 800, // values from 0 to 3000, with step 50ms
+});
+</script>
+<script>
+  let scrollpos = window.scrollY
+  const header = document.querySelector(".navbar")
+  const header_height = header.offsetHeight
+
+  const add_class_on_scroll = () => header.classList.add("scrolled", "shadow-sm")
+  const remove_class_on_scroll = () => header.classList.remove("scrolled", "shadow-sm")
+
+  window.addEventListener('scroll', function() {
+    scrollpos = window.scrollY;
+
+    if (scrollpos >= header_height) { add_class_on_scroll() }
+    else { remove_class_on_scroll() }
+
+    console.log(scrollpos)
+  })
+</script>
+
+  </body>
+</html>
