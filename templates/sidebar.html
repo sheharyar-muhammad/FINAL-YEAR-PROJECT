@@ -1,0 +1,52 @@
+<div class="left">
+    <div class="head">
+        <h2>Welcome {{user.username}}</h2>
+    </div>
+    <div class="links">
+        <div class="upper_links">
+            <a href="{% url 'input' %}">Classify</a>
+            <a href="{% url 'history' %}">History</a>
+            <a href="{% url 'profile' %}">Profile</a>
+           
+
+            <style>
+                .upper_links a:hover{
+                    color:#fff;
+                    transition:all ease-in-out 300ms;
+
+                }
+                .lower_links {
+                    margin-top: 300px;
+
+                }
+                .lower_links a:hover{
+                    color:#fff;
+                    transition:all ease-in-out 300ms;
+                    
+                }
+                .lower_links button:hover{
+                    color:#fff;
+                    transition:all ease-in-out 300ms;
+                    
+                }
+
+                .logout{
+                    background:transparent;
+                    border:none;
+                    color:#8A8A8E;
+
+
+                }
+            </style>
+
+        </div>
+        <div class="lower_links">
+            <a href="{% url 'feedback' %}">Feedback</a>
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button class="logout" type="submit">Logout</button>
+            </form>
+        </div>
+           
+    </div>
+</div>
