@@ -1,0 +1,107 @@
+{% load static %}
+<!doctype html>
+<html class="h-100" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="description" content="A well made and handcrafted Bootstrap 5 template">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
+  <meta name="author" content="Holger Koenemann">
+  <meta name="generator" content="Eleventy v2.0.0">
+  <meta name="HandheldFriendly" content="true">
+  <title>Register a new account</title>
+  <link rel="stylesheet" href="{% static 'css/theme.min.css' %}">
+
+
+</head>
+
+<body class="d-flex h-100 w-100 bg-black text-white" data-bs-spy="scroll" data-bs-target="#navScroll">
+  {% include 'fonts.html' %}
+
+  <div class="h-100 container-fluid">
+    <div class="h-100 row d-flex align-items-stretch">
+
+      <div class="col-12 col-md-7 col-lg-6 col-xl-5 d-flex align-items-start flex-column px-vw-5">
+
+        <header class="mb-auto py-vh-2 col-12">
+          <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
+            <img src="{% static 'img/Logo_Ai.png' %}" style="width: 30px;margin-top: -7px;" alt="">
+            <span class="ms-md-1 mt-1 fw-bolder me-md-5">AI-Powered-SPRC</span>
+          </a>
+
+        </header>
+        <main class="mb-auto col-12">
+          <h1>Register a new account</h1>
+
+          <form class="form-edit" method="post">
+            {% csrf_token %}
+            <div class="col-12">
+              <div class="mb-3">
+                <label for="{{ form.username.id_for_label }}" class="form-label">Username</label>
+                <div class="form-control form-control-lg bg-gray-800 border-dark">
+                  {{ form.username }}</div>
+
+
+              </div>
+              <div class="mb-3  ">
+                <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
+
+                <div class="form-control form-control-lg bg-gray-800 border-dark">
+                  {{ form.email }}
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="{{ form.password1.id_for_label }}" class="form-label">Password</label>
+                <div class="form-control form-control-lg bg-gray-800 border-dark"id="exampleInputPassword">
+                  {{ form.password1 }}</div>
+
+
+              </div>
+              <div class="mb-3  ">
+                <label for="{{ form.password2.id_for_label }}" class="form-label">Confirm Password</label>
+
+                <div class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputPassword1">
+                  {{ form.password2 }}
+                </div>
+                <br>
+                <button type="submit" class="btn btn-white btn-xl mb-4">Submit</button>
+                <div class="error_list">
+                  <ul>
+                    {{ form.errors }}
+                  </ul>
+                </div>
+              </div>
+              <style>
+                .form-edit input {
+                  width: 100%;
+                  background-color: transparent;
+                  color: #fff;
+                  border: none;
+                  outline: none;
+
+                }
+                .error_list ul {
+                  color: red;
+                  font-size: 14px;
+                }
+                body{
+                  background-image: url('https://img.freepik.com/free-photo/solid-gypsum-wall-textured-background_53876-101643.jpg?t=st=1717428358~exp=1717431958~hmac=49b77426322ad32ec8e8415949ad2b1f9ba64712cfd14606c4920de0447cb475&w=740'); /* Replace 'your-image-url.jpg' with the path to your image */
+                  background-size: cover; /* Cover the entire body */
+                  background-repeat: no-repeat; /* Do not repeat the image */
+                  background-position: center; /* Position the image in the center */
+                }
+                
+              </style>
+          </form>
+
+        </main>
+      </div>
+
+  </div>
+</body>
+
+</html>
