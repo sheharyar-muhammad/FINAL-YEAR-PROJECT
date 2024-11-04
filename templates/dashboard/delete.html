@@ -1,0 +1,145 @@
+{% load static %}
+<!doctype html>
+<html class="h-100" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="description" content="A well made and handcrafted Bootstrap 5 template">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
+    <meta name="author" content="Holger Koenemann">
+    <meta name="generator" content="Eleventy v2.0.0">
+    <meta name="HandheldFriendly" content="true">
+    <title>AI-Powered-SPRC</title>
+    <link rel="stylesheet" href="{% static 'css/theme.min.css' %}">
+
+
+    {% include 'fonts.html' %}
+
+
+
+    <style>
+        .main_profile_div {
+            background-color: #111;
+            width: 100%;
+            height: 100vh;
+            font-size: 14px;
+        }
+
+        .main_profile_div h2 {
+            font-size: 18px;
+        }
+
+        .main_profile_div .inner {
+            display: flex;
+            justify-content: space-between;
+            height: 100vh;
+
+        }
+
+        .left {
+            padding: 30px;
+            width: 23%;
+        }
+
+        .right {
+            padding: 20px;
+            background-color: #202020;
+            width: 78%;
+        }
+
+        .left .links {
+            height: 80vh;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .left .links .upper_links {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .left .links a {
+            text-decoration: none;
+            color: #8A8A8E;
+            ;
+        }
+
+        .left .links .lower_links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .right .content {
+            padding: 50px;
+        }
+
+        .main_profile_div .upper_content_div {
+            padding: 20px;
+            border-bottom: 1px solid rgba(143, 143, 143, 0.641);
+        }
+
+        .main_profile_div .upper_content_div p {
+            margin: 20px 0px;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white mt-0" data-bs-spy="scroll" data-bs-target="#navScroll">
+
+
+    <div class="main_profile_div">
+        <div class="inner">
+            {% include 'sidebar.html' %}
+            <div class="right">
+                <div class="content">
+                    <div class="upper_content_div">
+                        <form method="post">
+                            {%csrf_token%}
+                            <p>ARE YOU SURE YOU WANT TO DELETE? {{details.title}}</p>
+                            <input class="btn btn-outline-light" type="submit" value="SURE">
+                        </form>
+                        <p>
+
+                            <ol>
+                                {% for i in records  %}
+
+
+                                <li class="list_record">
+                                    <a class="link-fancy link-fancy-light" style="color: #e7e7e7;"
+                                        href="{% url 'record_details' i.pk %}">
+
+                                        {{ i.title }}
+                                    </a>
+                                    <span class="dots">
+                                        ...
+                                    </span>
+
+                                    <div class="dots_inner">
+                                        <a href="{% url 'updatetext' i.pk %}">Rename</a>
+                                        <a href="{% url 'deletetext' i.pk %}" class="dlt">Delete</a>
+                                    </div>
+                                </li>
+                                {% endfor %}
+
+                            </ol>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html
